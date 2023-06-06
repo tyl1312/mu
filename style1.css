@@ -1,0 +1,74 @@
+/* Mobile */
+@media only screen and (max-width:46.1875em){
+    #header .header-item{
+        display:none;
+    }
+    .nav-mobile-btn i{
+        display:block;
+    }
+    #nav{
+        display:none;
+    }
+    .search-button span{
+        display:none
+    }
+    #slider .text-content{
+        bottom:12px;
+    }
+    #team .position{
+        margin-bottom: 24px;
+    }
+    #team .player{
+        width:48%;
+        margin-bottom: 16px;
+    }
+    .player-info .player-first-name,
+    .player-info .player-last-name{
+        font-size:28px;    
+        line-height:32px;
+    }
+    #manager .manager-visual{
+        display: none;
+    }
+    #manager .manager-bio{
+        margin:16px auto;
+    }
+    #manager .bio-item{
+        width:100%;
+        margin-bottom: 6px;
+    }
+    #legends .legends-item{
+        width:48%;
+        margin-bottom:16px;
+    }
+    #footer .footer-social-links{
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer .footer-social-icon{
+        margin-bottom: 16px;
+    }
+    #footer .footer-social-icon li{
+        margin-right:8px;
+    }
+    #footer .footer-social-btn{
+        margin-left: -8px;
+    }
+}
+/* Tablet */
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+    #team .player{
+        width:31.3333%;
+    }
+    #legends .legends-item{
+        width:31.3333%;
+    }
+}
+
+/* PC */
+@media only screen and (min-width:64em){
+
+}
+
+@media only screen and (max-width:63.9375em){
+}

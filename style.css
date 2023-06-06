@@ -1,0 +1,548 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.subnav::after{
+    content: " ";
+    display:block;
+    height: 3px;
+    background-color: salmon;
+    margin-top: 2px;
+    transform: scale(0);
+    transition: all 0.5s;
+}
+.subnav:hover::after{
+    transform:scale(1);
+}
+
+/* Header */
+#header{
+    width:100%;
+    height:60px;
+    background-color:#C70101;
+    position:fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index:1;
+}
+#header .header-item,
+#header .header-logo{
+    padding: 8px;
+    float:left;
+}
+#header .logo-mu{
+    width:46px;
+    height:46px;
+    background: url('./img/1200px-Man_Utd_FC_.svg.png') top left / contain no-repeat;
+    float:left;
+    display:block;
+}
+#header .header-button{
+    width:44px;
+    cursor: pointer;
+}
+#header .header-button i{
+    font-size: 44px;
+    background-color:#fff;
+    font-weight:900;
+}
+.nav{
+    list-style-type:none ;
+}
+.nav li{
+    float:left;
+    padding: 12px 6px;
+    cursor:pointer;
+}
+.nav li a{
+    font-size:14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color:#fff;
+    line-height: 1.5;
+}
+#header .search-button{
+    float:right;
+    padding: 20px 6px;
+    margin-right: 16px;
+    cursor:pointer;
+}
+.search-button i{
+    color:#fff;
+    font-size:20px
+}
+.search-button span{
+    font-size:14px;
+    margin-left:7px;
+    color:#fff;
+}
+.nav-mobile-btn{
+    display: inline-block;
+}
+.nav-mobile-btn i{
+    font-size:28px;
+    color:#fff;
+    position:relative;
+    top: 16px;
+    display:none;
+    cursor:pointer;
+}
+.nav-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    display:none;
+    animation: fadeIn linear 0.3s;
+}
+.header-mobile-item{
+    background-color:#fff;
+    width:320px;
+    max-width:100%;
+    position:fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    opacity:0;
+    transition: all linear 0.3s;
+}
+.header-mobile-user{
+    margin: 8px 0 0 32px;
+}
+.header-mobile-user::after{
+    content: "";
+    display:block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    margin-top: 4px;
+}
+.header-mobile-user-img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border: 1px solid rgba(0,0,0,.2);
+}
+.header-mobile-user-name{
+    display:block;
+    font-size: 24px;
+}
+.nav-mobile{
+    list-style-type: none;
+    margin:24px 0 0 32px;
+}
+.nav-mobile li{
+    padding: 8px 0;
+    cursor:pointer;
+}
+.nav-mobile li a{
+    font-size:14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color:#333;
+    display:inline-block;
+}
+.header-mobile-close{
+    position:absolute;
+    right: 12px;
+    top: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+.header-mobile-close i{
+    font-size:28px;
+    color:#666;
+}
+.header-input{
+    display: none;
+}
+.header-input:checked ~ .nav-overlay{
+    display:block;
+}
+.header-input:checked ~ .header-mobile-item{
+    transform: translateX(0);
+    opacity:1;
+}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+/* Slider */
+#slider{
+    background:url('./img/636209344119667017-AFP-AFP-K459Z-88069738.webp') top center /cover no-repeat;
+    position:relative;
+    margin-top:60px;
+    padding-top:50%;
+}
+#slider .text-content{
+    color:#fff;
+    text-align:center;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 1px #000;
+    position:absolute;
+    bottom:60px;
+}
+#slider .text-heading{
+    font-size:24px;
+    font-weight:400;
+}
+
+/* Team section */
+#team .position{
+    width:94%;
+    margin-left:3%;
+    margin-right:3%;
+    margin-bottom: 64px;
+    display:block;
+}
+#team .position-name{
+    font-size: 24px;
+    color:#000;
+    text-transform: uppercase;
+    border-bottom: 0.8px solid rgb(217,217,217);
+    display:block;
+    font-weight: bold;
+    margin:12px 0;
+    padding-bottom:12px;
+}
+#team .sub-position{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-top:32px;
+}
+#team .player{
+    position:relative;
+    width:23%;
+    float:left;
+    text-align:left; 
+    overflow:hidden;
+    display:block;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    cursor:pointer;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+#team .player:hover .player-img{
+    transform: scale(1.1);
+}
+#team .player:hover .player-number::after{
+    width:64px;
+}
+
+#team .player-img{
+    width:100%;
+    height:100%;
+    float:left;
+    cursor:pointer;
+    transition: 0.2s ease-out,  transform 1.5s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#team .player-info{
+    bottom:4px;
+    left:5%;
+    position:absolute;
+}
+.player-info .player-number{
+    font-size:14px;
+    color:#fff;
+    margin-bottom:8px;
+    display:block;
+    font-weight: bold;
+    line-height:16px;
+}
+.player-info .player-number::after{
+    content:"";
+    display:block;
+    height:3px;
+    margin-top:4px;
+    width:24px;
+    border-top: 2px solid #c81617;
+    transition: all 0.4s ease;
+}
+
+.player-info .player-first-name,
+.player-info .player-last-name{
+    color:#fff;
+    font-size:40px;
+    text-transform: uppercase;
+    display:block;
+    font-weight:400;
+    font-family:"Bebas Neue", serif;
+    line-height:36px;
+}
+
+/* Manager section */
+#content #manager{
+    width:100%;
+}
+#manager .manager-visual{
+    background-color: rgb(63,63,63);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    text-transform: uppercase;
+    font-weight:500; 
+    padding:0 100px;
+}
+#manager .manager-info{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    text-align:left;
+    flex:1;
+}
+.manager-info .role{
+    font-size:32px;
+    font-family:'Roboto', serif;
+}
+.manager-info .role::after{
+    content:'';
+    background-color:#c81617;
+    height:2px;
+    display:block;
+    margin-top:2px;
+    width:170px;
+}
+.manager-info .manager-name{
+    font-size:28px;
+    font-family:'Roboto', serif;
+}
+.manager-info .manager-quote{
+    font-weight: lighter;
+    font-size:20px;
+    text-align:left;
+    font-style: italic;
+    width:80%;
+    font-family:'Roboto', serif;
+}
+#manager .manager-img{
+    flex:1;
+    margin-top:32px;
+}
+#manager .manager-stats{
+    font-family:'Roboto', serif;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left:64px;
+    flex:1;
+}
+
+/* Manager bio */
+#manager .manager-bio{
+    margin:48px auto;
+    width:60%;
+    font-size:20px;
+    font-family:'Roboto', sans-serif;
+}
+#manager .bio-sum{
+    margin:16px 0;
+    color:#000;
+    font-weight:bold;
+    border-bottom: 2px solid #ccc;
+}
+#manager .bio-title,
+#manager .bio-item-title{
+    color:grey;
+    text-transform: uppercase;
+    font-size:16px;
+    font-weight: bold;
+}
+#manager .bio-title{
+    margin:16px 0;
+}
+#manager .bio-text{
+    margin:16px 0;
+}
+#manager .bio-info{
+    display:flex;
+}
+#manager .bio-info ul{
+    list-style-type: none;
+    width:100%;
+}
+#manager .bio-item{
+    float:left;
+    width:33.33333%;
+    margin-bottom: 24px;
+}
+#manager .bio-item-title{
+    margin:8px 0;
+}
+#manager .manager-flag{
+    width:16px;
+    height:16px;
+    margin-right: 4px;
+}
+/* Legends section */
+#legends{
+    width:100%;
+    background-color: rgb(63,63,63);
+    color:#fff;
+    padding:48px 0;
+}
+#legends .legends-title{
+    color:#fff;
+    font-size:30px; 
+    text-transform: uppercase;
+    font-weight: bold; 
+    margin-left:120px; 
+    font-family:'Roboto', sans-serif;
+}
+#legends .legends-title::after{
+    content:'';
+    display:block;
+    height:2px;
+    width:120px;
+    background-color:#c81617;
+    margin-top:4px;
+}
+#legends .sub-position{
+    width:94%;
+    margin-left:3%;
+    margin-right:3%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-top:32px;
+}
+#legends .legends-item{
+    position:relative;
+    width:18%;
+    float:left;
+    text-align:left; 
+    overflow:hidden;
+    display:block;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    cursor:pointer;
+    margin-left:1%;
+    margin-right:1%;
+}
+#legends .legends-img{
+    width:100%;
+    height:100%;
+    float:left;
+    cursor:pointer;
+    transition: 0.2s ease-out,  transform 1.5s;
+}
+#legends .legends-item:hover .legends-img{
+    transform: scale(1.1);
+}
+#legends .legends-item:hover .legends-info::before{
+    width:64px;
+}
+#legends .legends-info{
+    bottom:4px;
+    left:5%;
+    position:absolute;
+}
+.legends-info .legends-info::before{
+    content:"";
+    display:block;
+    height:3px;
+    margin-top:4px;
+    width:24px;
+    border-top: 2px solid #c81617;
+    transition: all 0.4s ease;
+}
+
+.legends-info .legends-first-name,
+.legends-info .legends-last-name{
+    color:#fff;
+    font-size:32px;
+    text-transform: uppercase;
+    display:block;
+    font-weight:400;
+    font-family:"Bebas Neue", serif;
+    line-height:36px;
+    box-shadow: 0 0 1px #000;
+}
+
+/* Footer section */
+#footer .footer-social{
+    width: 100%;
+    text-align: center;
+    background-color: #2A2A2A;
+}
+#footer .footer-social-links{
+    padding-top:50px;
+    padding-bottom: 38px;
+    display: flex;
+    justify-content: center;
+}
+#footer .footer-social-icon{
+    list-style-type:none;
+    display: inline-block;
+}
+#footer .footer-social-icon li{
+    background-color: #3F3F3F;
+    border: 0.8px solid rgb(63,63,63);
+    border-radius: 50%; 
+    float:left;
+    width:44px;
+    height:44px;
+    position:relative;
+    cursor: pointer;
+    margin-right:4px;
+}
+#footer .footer-social-icon li:hover {
+    background-color:#c70101;
+}
+#footer .footer-social-icon img{
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform: translate(-50%, -50%);
+}
+#footer .footer-social-btn{
+    margin-left:32px;
+    display: inline-block;
+}#footer .footer-btn{
+    border: 1px solid rgb(63,63,63);
+    background-color: #3F3F3F;
+    border-radius: 100px; 
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+#footer .black-btn:hover{
+    background-color: rgba(255,255,255,.15);
+}
+#footer .red-btn:hover{
+    background-color: rgba(199,1,1,.8)
+}
+#footer .footer-btn span{
+    font-size:14px;
+    line-height: 50px;
+    padding:0 32px;
+    font-family:'Roboto', sans-serif;
+    text-transform: uppercase;
+    color:#fff;
+}
+#footer .footer-copyright{
+    color:rgb(163, 163, 163);
+    background-color: rgb(26, 26, 26);
+    text-align:center;
+    font-size:16px;
+    padding: 8px 0;
+}
